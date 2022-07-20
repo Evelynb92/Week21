@@ -1,25 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 
-
-# Window Box -------------------------
-
-# root = tk.Tk()
-# root.title('Contact Book')
-
-# Add Tabs -------------------------
-
-# tabControl = ttk.Notebook(root, width=520, height=520)
-# add_tab = tk.Frame(tabControl)
-# search_tab = tk.Frame(tabControl)
-# tabControl.add(add_tab, text='Add Contacts')
-# tabControl.add(search_tab, text='Search Contacts')
-# tabControl.grid(row=0, column=0)
-# #
-# # Background Images -------------------------
-#
-
-
 class Gui:
   def __init__(self):
       self.root = tk.Tk()
