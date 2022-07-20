@@ -26,53 +26,57 @@ background_label_add.place(x=0, y=0, relwidth=1, relheight=1)
 background_label_search = tk.Label(search_tab, image=bg_img)
 background_label_search.place(x=0, y=0, relwidth=1, relheight=1)
 
+class Gui:
+  def __init__(self, window):
+
 # Buttons -------------------------
 
-add_button = tk.Button(add_tab, text='Add Contact')
-add_button.grid(row=5, column=0)
+    self.add_button = tk.Button(add_tab, text='Add Contact')
+    self.add_button.grid(row=5, column=0)
 
-search_button = tk.Button(search_tab, text='Search Contact')
-search_button.grid(row=6, column=0)
+    self.search_button = tk.Button(search_tab, text='Search Contact')
+    self.search_button.grid(row=6, column=0)
 
-clear_button = tk.Button(text="Clear")
-clear_button.grid(row=7, column=0)
+    self.clear_button = tk.Button(text="Clear")
+    self.clear_button.grid(row=7, column=0)
 
-exit_button = tk.Button(text="Exit")
-exit_button.grid(row=8, column=0)
+    self.exit_button = tk.Button(text="Exit")
+    self.exit_button.grid(row=8, column=0)
 
-# Labels -------------------------
+    # Labels -------------------------
 
-first_name_label = tk.Label(text='First Name:', bg='white')
-first_name_label.grid(row=0, column=0)
+    self.first_name_label = tk.Label(text='First Name:', bg='white')
+    self.first_name_label.grid(row=0, column=0)
 
-last_name_label = tk.Label(text='Last Name:', bg='white')
-last_name_label.grid(row=1, column=0)
+    self.last_name_label = tk.Label(text='Last Name:', bg='white')
+    self.last_name_label.grid(row=1, column=0)
 
-cellphone_number_label = tk.Label(text='Cellphone number:', bg='white')
-cellphone_number_label.grid(row=2, column=0)
+    self.cellphone_number_label = tk.Label(text='Cellphone number:', bg='white')
+    self.cellphone_number_label.grid(row=2, column=0)
 
-email_label = tk.Label(text='Email:', bg='white')
-email_label.grid(row=3, column=0)
+    self.email_label = tk.Label(text='Email:', bg='white')
+    self.email_label.grid(row=3, column=0)
 
-home_number_label = tk.Label(text='Home number:',bg='white')
-home_number_label.grid(row=4, column=0)
+    self.home_number_label = tk.Label(text='Home number:',bg='white')
+    self.home_number_label.grid(row=4, column=0)
 
-# Entry Boxes -------------------------
+    # Entry Boxes -------------------------
 
-first_name_entry = tk.Entry()
-first_name_entry.grid(row=0, column=2)
+    self.first_name_entry = tk.Entry()
+    self.first_name_entry.grid(row=0, column=2)
 
-last_name_entry = tk.Entry()
-last_name_entry.grid(row=1, column=2)
+    self.last_name_entry = tk.Entry()
+    self.last_name_entry.grid(row=1, column=2)
 
-cellphone_number_entry = tk.Entry()
-cellphone_number_entry.grid(row=2, column=2)
+    self.cellphone_number_entry = tk.Entry()
+    self.cellphone_number_entry.grid(row=2, column=2)
 
-email_entry = tk.Entry()
-email_entry.grid(row=3, column=2)
+    self.email_entry = tk.Entry()
+    self.email_entry.grid(row=3, column=2)
 
-home_number_entry = tk.Entry()
-home_number_entry.grid(row=4, column=2)
+    self.home_number_entry = tk.Entry()
+    self.home_number_entry.grid(row=4, column=2)
 
+gui=Gui(root)
 root.mainloop()
 
