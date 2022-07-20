@@ -1,3 +1,3 @@
 from gui import Gui
 
-Gui()
+this_gui = Gui()
