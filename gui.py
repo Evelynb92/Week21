@@ -132,9 +132,26 @@ class Gui:
         global counter
 
         add_success = add.updater(self.first_name_entry.get(),self.last_name_entry.get(),self.cellphone_number_entry.get(),self.email_entry.get(),self.home_number_entry.get(),counter)
+
         if add_success:
 
+            self.first_name_entry.configure = tk.Label(search_tab, text='First Name:', bg='white')
+            self.first_name_entry.grid(row=0, column=0)
+
+            self.last_name_entry.configure = tk.Label(search_tab, text='Last Name:', bg='white')
+            self.last_name_entry.grid(row=1, column=0)
+
+            self.cellphone_number_entry.configure = tk.Label(search_tab, text='Cellphone number:', bg='white')
+            self.cellphone_number_entry.grid(row=2, column=0)
+
+            self.email_entry.configure = tk.Label(search_tab, text='Email:', bg='white')
+            self.email_entry.grid(row=3, column=0)
+
+            self.home_number_entry.configure = tk.Label(search_tab, text='Home number:', bg='white')
+            self.home_number_entry.grid(row=4, column=0)
+
     # Searching User Input -------------------------
+
 
     def run_search(self):
 
