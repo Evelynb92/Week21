@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-import add
+from contact import Contacts
 from search import Search
 
 # Window Box -------------------------
@@ -12,6 +12,7 @@ root.title('Contact Book')
 
 contact_list = ['First Name:', 'Last Name: ', 'Cellphone number: ', 'E-mail: ', 'Home number: ']
 counter = 0
+
 
 # Add Tabs -------------------------
 
@@ -38,7 +39,7 @@ class Gui:
 
         # Add Buttons -------------------------
 
-        self.add_button = tk.Button(add_tab, text='Add Contact')#, command=self.run_add)
+        self.add_button = tk.Button(add_tab, text='Add Contact', command=self.run_add)
         self.add_button.grid(row=7, column=7)
 
         self.clear_button = tk.Button(add_tab, text="Clear")
@@ -128,27 +129,24 @@ class Gui:
 
         # Capturing User Input -------------------------
 
-    def run_add(self):
-        global counter
+    def user_input(self):
 
-        add_success = add.updater(self.first_name_entry.get(),self.last_name_entry.get(),self.cellphone_number_entry.get(),self.email_entry.get(),self.home_number_entry.get(),counter)
+        add_contacts = Contacts(self.first_name_entry.get(), self.last_name_entry.get(),
+                                self.cellphone_number_entry.get(), self.email_entry.get(), self.home_number_entry.get())
 
-        if add_success:
+        self.first_name_entry.get = ()
 
-            self.first_name_entry.configure = tk.Label(search_tab, text='First Name:', bg='white')
-            self.first_name_entry.grid(row=0, column=0)
+        self.last_name_entry.get = ()
 
-            self.last_name_entry.configure = tk.Label(search_tab, text='Last Name:', bg='white')
-            self.last_name_entry.grid(row=1, column=0)
+        self.cellphone_number_entry.get = ()
 
-            self.cellphone_number_entry.configure = tk.Label(search_tab, text='Cellphone number:', bg='white')
-            self.cellphone_number_entry.grid(row=2, column=0)
+        self.email_entry.get = ()
 
-            self.email_entry.configure = tk.Label(search_tab, text='Email:', bg='white')
-            self.email_entry.grid(row=3, column=0)
+        self.home_number_entry.get = ()
 
-            self.home_number_entry.configure = tk.Label(search_tab, text='Home number:', bg='white')
-            self.home_number_entry.grid(row=4, column=0)
+
+        if add_contacts:
+
 
     # Searching User Input -------------------------
 
