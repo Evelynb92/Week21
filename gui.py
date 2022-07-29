@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from add import save_contact
 from contact import Contacts
 from search import Search
 
@@ -39,7 +40,7 @@ class Gui:
 
         # Add Buttons -------------------------
 
-        self.add_button = tk.Button(add_tab, text='Add Contact', command=self.run_add)
+        self.add_button = tk.Button(add_tab, text='Add Contact', command=self.user_input)
         self.add_button.grid(row=7, column=7)
 
         self.clear_button = tk.Button(add_tab, text="Clear")
@@ -127,25 +128,13 @@ class Gui:
         self.home_number_entry = tk.Entry(search_tab)
         self.home_number_entry.grid(row=4, column=2)
 
-        # Capturing User Input -------------------------
+    # Capturing User Input -------------------------
 
     def user_input(self):
 
         add_contacts = Contacts(self.first_name_entry.get(), self.last_name_entry.get(),
                                 self.cellphone_number_entry.get(), self.email_entry.get(), self.home_number_entry.get())
-
-        self.first_name_entry.get = ()
-
-        self.last_name_entry.get = ()
-
-        self.cellphone_number_entry.get = ()
-
-        self.email_entry.get = ()
-
-        self.home_number_entry.get = ()
-
-
-        if add_contacts:
+        save_contact(current_contact)
 
 
     # Searching User Input -------------------------
