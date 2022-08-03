@@ -4,39 +4,41 @@ from add import save_contact
 from contact import Contacts
 from search import Search
 
-# Window Box -------------------------
-
-root = tk.Tk()
-root.title('Contact Book')
-
-# Contact List -------------------------
-
-contact_list = ['First Name:', 'Last Name: ', 'Cellphone number: ', 'E-mail: ', 'Home number: ']
-counter = 0
-
-
-# Add Tabs -------------------------
-
-tabControl = ttk.Notebook(root, width=520, height=520)
-add_tab = tk.Frame(tabControl)
-search_tab = tk.Frame(tabControl)
-tabControl.add(add_tab, text='Add Contacts')
-tabControl.add(search_tab, text='Search Contacts')
-tabControl.grid(row=0, column=0)
-
-# Background Images -------------------------
-
-bg_img = tk.PhotoImage(file='contactbook.png')
-
-background_label_add = tk.Label(add_tab, image=bg_img)
-background_label_add.place(x=0, y=0, relwidth=1, relheight=1)
-
-background_label_search = tk.Label(search_tab, image=bg_img)
-background_label_search.place(x=0, y=0, relwidth=1, relheight=1)
-
-
 class Gui:
-    def __init__(self, window):
+
+    def __init__(self):
+
+        # Window Box -------------------------
+
+        root = tk.Tk()
+        root.title('Contact Book')
+
+        # Contact List -------------------------
+
+        contact_list = ['First Name:', 'Last Name: ', 'Cellphone number: ', 'E-mail: ', 'Home number: ']
+        counter = 0
+
+
+        # Add Tabs -------------------------
+
+        tabControl = ttk.Notebook(root, width=520, height=520)
+        add_tab = tk.Frame(tabControl)
+        search_tab = tk.Frame(tabControl)
+        tabControl.add(add_tab, text='Add Contacts')
+        tabControl.add(search_tab, text='Search Contacts')
+        tabControl.grid(row=0, column=0)
+
+        # Background Images -------------------------
+
+        bg_img = tk.PhotoImage(file='contactbook.png')
+
+        background_label_add = tk.Label(add_tab, image=bg_img)
+        background_label_add.place(x=0, y=0, relwidth=1, relheight=1)
+
+        background_label_search = tk.Label(search_tab, image=bg_img)
+        background_label_search.place(x=0, y=0, relwidth=1, relheight=1)
+
+
 
         # Add Buttons -------------------------
 
@@ -131,14 +133,15 @@ class Gui:
     # Capturing User Input -------------------------
 
     def user_input(self):
+        print(self.first_name_entry.get())
 
         add_contacts = Contacts(self.first_name_entry.get(), self.last_name_entry.get(),
                                 self.cellphone_number_entry.get(), self.email_entry.get(), self.home_number_entry.get())
         save_contact(current_contact)
 
 
-    # Searching User Input -------------------------
 
+    # Searching User Input -------------------------
 
     def run_search(self):
 
@@ -169,5 +172,5 @@ class Gui:
 
 
 
-gui = Gui(root)
+#Gui = Gui(root)
 root.mainloop()
