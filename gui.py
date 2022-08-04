@@ -79,20 +79,20 @@ class Gui:
 
         # Search Labels -------------------------
 
-        self.first_name_label = tk.Label(search_tab, text='First Name:', bg='white')
-        self.first_name_label.grid(row=0, column=0)
+        self.first_name_search_label = tk.Label(search_tab, text='First Name:', bg='white')
+        self.first_name_search_label.grid(row=0, column=0)
 
-        self.last_name_label = tk.Label(search_tab, text='Last Name:', bg='white')
-        self.last_name_label.grid(row=1, column=0)
+        self.last_name_search_label = tk.Label(search_tab, text='Last Name:', bg='white')
+        self.last_name_search_label.grid(row=1, column=0)
 
-        self.cellphone_number_label = tk.Label(search_tab, text='Cellphone number:', bg='white')
-        self.cellphone_number_label.grid(row=2, column=0)
+        self.cellphone_number_search_label = tk.Label(search_tab, text='Cellphone number:', bg='white')
+        self.cellphone_number_search_label.grid(row=2, column=0)
 
-        self.email_label = tk.Label(search_tab, text='Email:', bg='white')
-        self.email_label.grid(row=3, column=0)
+        self.email_search_label = tk.Label(search_tab, text='Email:', bg='white')
+        self.email_search_label.grid(row=3, column=0)
 
-        self.home_number_label = tk.Label(search_tab, text='Home number:', bg='white')
-        self.home_number_label.grid(row=4, column=0)
+        self.home_number_search_label = tk.Label(search_tab, text='Home number:', bg='white')
+        self.home_number_search_label.grid(row=4, column=0)
 
         # Add Entry Boxes -------------------------
 
@@ -113,25 +113,24 @@ class Gui:
 
         # Search Entry Boxes -------------------------
 
-        self.first_name_entry = tk.Entry(search_tab)
-        self.first_name_entry.grid(row=0, column=2)
+        self.first_name_search_entry = tk.Entry(search_tab)
+        self.first_name_search_entry.grid(row=0, column=2)
 
-        self.last_name_entry = tk.Entry(search_tab)
-        self.last_name_entry.grid(row=1, column=2)
+        self.last_name_search_entry = tk.Entry(search_tab)
+        self.last_name_search_entry.grid(row=1, column=2)
 
-        self.cellphone_number_entry = tk.Entry(search_tab)
-        self.cellphone_number_entry.grid(row=2, column=2)
+        self.cellphone_number_search_entry = tk.Entry(search_tab)
+        self.cellphone_number_search_entry.grid(row=2, column=2)
 
-        self.email_entry = tk.Entry(search_tab)
-        self.email_entry.grid(row=3, column=2)
+        self.email_search_entry = tk.Entry(search_tab)
+        self.email_search_entry.grid(row=3, column=2)
 
-        self.home_number_entry = tk.Entry(search_tab)
-        self.home_number_entry.grid(row=4, column=2)
+        self.home_number_search_entry = tk.Entry(search_tab)
+        self.home_number_search_entry.grid(row=4, column=2)
 
     # Capturing User Input -------------------------
 
     def user_input(self):
-        print(self.first_name_entry.get())
 
         add_contacts = Contacts(self.first_name_entry.get(), self.last_name_entry.get(),
                                 self.cellphone_number_entry.get(), self.email_entry.get(), self.home_number_entry.get())
@@ -143,29 +142,29 @@ class Gui:
 
     def run_search(self):
 
-        search_success = Search.contact_searched(Search, self.first_name_entry.get())
+        search_success = Search.contact_searched(Search, self.first_name_search_entry.get())
 
         if search_success:
 
-            self.first_name_label.configure = tk.Label(search_tab, text='First Name:', bg='white')
-            self.first_name_label.grid(row=0, column=0)
+            self.first_name_search_label.configure = tk.Label(search_tab, text='First Name:', bg='white')
+            self.first_name_search_label.grid(row=0, column=0)
 
-            self.last_name_label.configure = tk.Label(search_tab, text='Last Name:', bg='white')
-            self.last_name_label.grid(row=1, column=0)
+            self.last_name_search_label.configure = tk.Label(search_tab, text='Last Name:', bg='white')
+            self.last_name_search_label.grid(row=1, column=0)
 
-            self.cellphone_number_label.configure = tk.Label(search_tab, text='Cellphone number:', bg='white')
-            self.cellphone_number_label.grid(row=2, column=0)
+            self.cellphone_number_search_label.configure = tk.Label(search_tab, text='Cellphone number:', bg='white')
+            self.cellphone_number_search_label.grid(row=2, column=0)
 
-            self.email_label.configure = tk.Label(search_tab, text='Email:', bg='white')
-            self.email_label.grid(row=3, column=0)
+            self.email_search_label.configure = tk.Label(search_tab, text='Email:', bg='white')
+            self.email_search_label.grid(row=3, column=0)
 
-            self.home_number_label.configure = tk.Label(search_tab, text='Home number:', bg='white')
-            self.home_number_label.grid(row=4, column=0)
+            self.home_number_search_label.configure = tk.Label(search_tab, text='Home number:', bg='white')
+            self.home_number_search_label.grid(row=4, column=0)
 
         else:
 
-            self.first_name_entry.configure(text='NOT FOUND')
-            self.first_name_label.grid(row=2, column=5)
+            self.first_name_search_entry.configure(text='NOT FOUND')
+            self.first_name_search_label.grid(row=2, column=5)
 
 
 
