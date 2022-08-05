@@ -2,7 +2,7 @@ class Search:
 
     def contact_searched(self, user_input):
         '''Takes in 1st & last name user is searching for and returns user info'''
-        with open("contact library.txt", "r") as file:
+        with open("contact library", "r") as file:
             data = file.readlines()
 
         for contact_info in data:

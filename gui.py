@@ -146,27 +146,24 @@ class Gui:
 
         if search_success:
 
-            self.first_name_search_label.configure = tk.Label(search_tab, text='First Name:', bg='white')
-            self.first_name_search_label.grid(row=0, column=0)
+            self.last_name_search_entry.configure = tk.Entry(search_tab, text=Search.last_name)
 
-            self.last_name_search_label.configure = tk.Label(search_tab, text='Last Name:', bg='white')
-            self.last_name_search_label.grid(row=1, column=0)
+            self.cellphone_number_search_entry.configure = tk.Entry(search_tab, text=Search.cellphone_number)
 
-            self.cellphone_number_search_label.configure = tk.Label(search_tab, text='Cellphone number:', bg='white')
-            self.cellphone_number_search_label.grid(row=2, column=0)
+            self.email_search_entry.configure = tk.Entry(search_tab, text=Search.email)
 
-            self.email_search_label.configure = tk.Label(search_tab, text='Email:', bg='white')
-            self.email_search_label.grid(row=3, column=0)
+            self.home_number_search_entry.configure = tk.Entry(search_tab, text=Search.home_number)
 
-            self.home_number_search_label.configure = tk.Label(search_tab, text='Home number:', bg='white')
-            self.home_number_search_label.grid(row=4, column=0)
 
         else:
 
-            self.first_name_search_entry.configure(text='NOT FOUND')
-            self.first_name_search_label.grid(row=2, column=5)
+            self.last_name_search_entry.configure = tk.Entry(text='NOT FOUND')
 
+            self.cellphone_number_search_entry.configure = tk.Entry(search_tab, text='NOT FOUND')
 
+            self.email_search_entry.configure = tk.Entry(search_tab, text='NOT FOUND')
+
+            self.home_number_search_entry.configure = tk.Entry(search_tab, text='NOT FOUND')
 
 
 Gui = Gui(root)
